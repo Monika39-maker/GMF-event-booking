@@ -39,7 +39,7 @@ const AdminLogin = () => {
       // Successful login
       console.log('Login successful');
       // Redirect to admin view page
-    //   navigate('/admin-view');
+      navigate('/admin-view');
     } else {
       setError('Wrong credential');
     }
