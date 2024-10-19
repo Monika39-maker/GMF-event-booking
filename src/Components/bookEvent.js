@@ -52,7 +52,7 @@ const BookEvent = () => {
     };
 
     // Send the form data
-    fetch("postgresql://gmf_user:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX@dpg-cru1hspu0jms73c32iug-a.frankfurt-postgres.render.com/gmf", {
+    fetch("http://localhost:5002", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

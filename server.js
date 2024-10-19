@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require("cors");
 
-
+require("dotenv").config();
 
 const port = 5002;
 app.use(cors());
@@ -13,13 +13,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const { Pool } = require("pg");
 
+
+const databaseUrl =
+  process.env.DATABASE_URL || process.env.CONNECTION_URL;
+
 const pool = new Pool({
-  user: "gmf_user",
-  host: "dpg-cru1hspu0jms73c32iug-a",
-  database: "gmf", // Replace with your database name
-  password: "lz8Mr3XSN2ctjwrhEoIGsfqrywzSZa1K", // Replace with your password if you have one
-  port: 5432,
+  connectionString: databaseUrl,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
+
 
 
 app.post('/', (req, res) => {
@@ -49,12 +53,12 @@ app.post('/', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  const query = "SELECT * FROM my_schema.booking";
+  const query = "SELECT * FROM booking";
 
   pool
     .query(query)
     .then((result) => 
-      console.log(result)
+      console.log(result.rows)
       // res.send(result)
     )
     .catch((error) => {

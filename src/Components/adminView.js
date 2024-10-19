@@ -50,10 +50,10 @@ const AdminView = () => {
             <TableHead>
               <TableRow>
                 <StyledTableCell>Guest Name</StyledTableCell>
-                <StyledTableCell align="right">Number of Adults</StyledTableCell>
-                <StyledTableCell align="right">Number of Under 5</StyledTableCell>
-                <StyledTableCell align="right">Number of Kids Over 5</StyledTableCell>
-                <StyledTableCell align="right">Total Costs</StyledTableCell>
+                <StyledTableCell align="right">Number of adults</StyledTableCell>
+                <StyledTableCell align="right">Number of kids under 5</StyledTableCell>
+                <StyledTableCell align="right">Number of kids over 5</StyledTableCell>
+                <StyledTableCell align="right">Total cost</StyledTableCell>
                 <StyledTableCell align="center">Has Paid</StyledTableCell>
               </TableRow>
             </TableHead>
