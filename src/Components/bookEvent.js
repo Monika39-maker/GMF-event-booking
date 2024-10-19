@@ -8,9 +8,9 @@ import TextField from "@mui/material/TextField";
 
 const BookEvent = () => {
   
-  const [applicantName, setApplicantName] = useState<String>('');
-  const [numAdults, setNumAdults] = useState<number>(0);
-  const [numKids, setNumKids] = useState<number>(0);
+  const [applicantName, setApplicantName] = useState('');
+  const [numAdults, setNumAdults] = useState(0);
+  const [numKids, setNumKids] = useState(0);
   const adultPrice = 25;
   const kidPrice = 15;
 
@@ -21,13 +21,13 @@ const BookEvent = () => {
       // Validate input fields
       
       if (!applicantName) {
-        errors.applicantName = 'Please enter your name';
+         throw new Error('Please enter your name');
       }
       if (numAdults < 0) {
-        errors.numAdults = 'Number of adults cannot be negative';
+        throw new Error('Number of adults cannot be negative');
       }
       if (numKids < 0) {
-        errors.numKids = 'Number of kids cannot be negative';
+        throw new Error('Number of kids cannot be negative');
       }
     
       
