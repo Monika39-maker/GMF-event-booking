@@ -1,11 +1,14 @@
 //import bookEvents.js component
 import React from 'react';
 import BookEvent from './Components/bookEvent' 
-
-const App: React.FC = () => {
+import AdminLogin from './Components/adminLogin';
+import AdminView from './Components/adminView';
+const App = () => {
   return (
     <div className="App">
       <BookEvent />
+      <AdminLogin />
+      <AdminView />
     </div>
   );
 }
