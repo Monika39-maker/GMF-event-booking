@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Button,
   TextField,
@@ -23,8 +24,9 @@ const AdminLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     setError('');
 
@@ -33,34 +35,14 @@ const AdminLogin = () => {
       return;
     }
 
-    try {
-      // Here you would typically make an API call to verify credentials
-      // For this example, we'll use a mock authentication
-      const response = await mockAuthenticateUser(username, password);
-      
-      if (response.success) {
-        // Handle successful login (e.g., store token, redirect)
-        console.log('Login successful');
-        // Redirect to admin dashboard or set authentication state
-      } else {
-        setError('Invalid username or password');
-      }
-    } catch (err) {
-      setError('An error occurred. Please try again.');
-      console.error('Login error:', err);
+    if (username === 'gmf2025' && password === 'gmf@2025') {
+      // Successful login
+      console.log('Login successful');
+      // Redirect to admin view page
+    //   navigate('/admin-view');
+    } else {
+      setError('Wrong credential');
     }
-  };
-
-  // Mock authentication function (replace with actual API call)
-  const mockAuthenticateUser = async (username, password) => {
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // Mock validation (replace with actual validation logic)
-    if (username === 'admin' && password === 'password') {
-      return { success: true };
-    }
-    return { success: false };
   };
 
   return (
