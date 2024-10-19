@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState } from 'react';
 
 import Button from "@mui/material/Button";
 
@@ -98,7 +98,7 @@ const BookEvent = () => {
       />
       <TextField
         label="Total Cost"
-        value={`£${totalCost.toFixed(2)}`}
+        value={`£ ${totalCost.toFixed(2)}`}
       />
       <Button variant="contained" color="primary" onClick={handlePayment}>
         Pay Now

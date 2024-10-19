@@ -1,9 +1,14 @@
 {
   "name": "gmf-booking",
   "version": "0.1.0",
-  "proxy": "http://localhost:3001",
+  "options": {
+    "allowedHosts": [
+      "localhost", ".localhost"],
+      "proxy": "http://localhost:3000"
+  },
+  
   "private": true,
-  "main": "src/index.tsx",
+  "main": "src/index.js",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
