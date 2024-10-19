@@ -5,12 +5,6 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
 
-interface FormData {
-  applicantName: string;
-  numAdults: number;
-  numKids: number;
-  totalCost: number;
-}
 
 const BookEvent = () => {
   
@@ -20,12 +14,12 @@ const BookEvent = () => {
   const adultPrice = 25;
   const kidPrice = 15;
 
-  const totalCost:number = numAdults * adultPrice + numKids * kidPrice;
+  const totalCost = numAdults * adultPrice + numKids * kidPrice;
 
   const handlePayment = () => {
     
       // Validate input fields
-      const errors: { [key:string]: string}  = {}
+      
       if (!applicantName) {
         errors.applicantName = 'Please enter your name';
       }
@@ -71,15 +65,15 @@ const BookEvent = () => {
       
     };
     
-  const handleApplicantNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleApplicantNameChange = (e) => {
     setApplicantName(e.target.value);
   };
 
-  const handleNumAdultsChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleNumAdultsChange = (e) => {
     setNumAdults(parseInt(e.target.value, 10) || 0);
   };
 
-  const handleNumKidsChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleNumKidsChange = (e) => {
     setNumKids(parseInt(e.target.value, 10) || 0);
   };
 
